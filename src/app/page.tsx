@@ -7,7 +7,7 @@ import InfiniteSliderVertical from '@/components/infinite-slider-vertical'
 export default function Page() {
    return (
       <div className='flex flex-col'>
-         <nav className='flex items-center justify-between px-2 fixed top-1 inset-x-1 border-b p-1'>
+         <nav className='flex items-center justify-between px-2 fixed top-1 inset-x-1 border-b p-1 bg-white'>
             <IgLogo />
             <IgText />
          </nav>
