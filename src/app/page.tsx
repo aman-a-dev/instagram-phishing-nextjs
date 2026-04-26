@@ -1,24 +1,17 @@
 import InfoForm from '@/components/forms/info-form'
 import { Dialog, DialogTrigger, DialogContent } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 import InfiniteSliderVertical from '@/components/infinite-slider-vertical'
-
+import Target from '@/components/forms/target'
 export default function Page() {
    return (
       <div className='flex flex-col'>
-         <nav className='flex items-center justify-between px-2 fixed top-1 inset-x-1 border-b p-1 bg-white'>
+         <nav className='z-10 flex items-center justify-between px-2 fixed top-1 inset-x-1 border-b p-1 bg-white'>
             <IgLogo />
             <IgText />
          </nav>
          <main className='mt-28 text-center'>
-            <div className='flex items-center justify-center gap-2 flex-col mb-3'>
-               <Avatar className='h-20 w-20'>
-                  <AvatarImage src='/img.png' />
-                  <AvatarFallback>EL</AvatarFallback>
-               </Avatar>
-               <p className='text-muted-foreground text-sm'>_.elham436</p>
-            </div>
+            <Target />
             <h1 className='mb-2 scroll-m-20 text-center text-4xl font-extrabold tracking-tight text-balance'>
                <span className='font-[cursive] border-b border-b-2 border-pink-400'>
                   Instagram
@@ -38,7 +31,6 @@ export default function Page() {
                <span className='text-amber-400 font-black'>50,000 birr </span>{' '}
                ይሸለሙ 🤟
             </p>
-
             <Dialog>
                <DialogTrigger asChild>
                   <Button>Get The Gift / ስጦታ ይቀበሉ</Button>
@@ -47,6 +39,7 @@ export default function Page() {
                   <InfoForm />
                </DialogContent>
             </Dialog>
+
             <div className='mt-10 flex items-center justify-center'>
                <InfiniteSliderVertical />
             </div>

